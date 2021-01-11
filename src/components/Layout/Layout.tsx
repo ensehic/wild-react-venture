@@ -1,9 +1,11 @@
 import React from 'react';
 
+import StarBackground from './StarBackground/StarBackground';
+
 const Layout = () => {
     return (
         <>
-            <p>Works</p>
+            <StarBackground />
         </>
     );
 };
