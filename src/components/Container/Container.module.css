@@ -1,6 +1,10 @@
 .container {
     width: 75%;
-    padding: 15px;
+    padding: 35px;
     margin: 0 auto;
-    color: white;
+    color: #ccc;
+    border-radius: 5px;
+    text-align: justify;
+    font-size: 1.05em;
+    line-height: 30px;
 }
