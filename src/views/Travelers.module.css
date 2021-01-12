@@ -1,0 +1,16 @@
+.travelersGrid {
+    display: grid;
+    grid-template-columns: repeat(1fr, 4);
+    grid-template-rows: repeat(1fr, 4);
+}
+
+.gridCell {
+    padding: 15px 35px;
+}
+
+@media (min-width: 1200px) {
+    .travelersGrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
