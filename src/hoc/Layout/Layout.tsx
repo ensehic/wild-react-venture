@@ -1,7 +1,7 @@
 import React from 'react';
 
 import StarBackground from './StarBackground/StarBackground';
-import Navbar from '../Navigation/Navbar/Navbar';
+import Navbar from '../../components/Navigation/Navbar/Navbar';
 
 const Layout = () => {
     return (
