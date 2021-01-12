@@ -24,7 +24,8 @@ code {
 
 
 .bg-1 {
-  background-color: #01024e;
+  /* background-color: #01024e; */
+  background-color: rgba(1, 2, 78, 0.8);
 }
 
 .bg-2 {
@@ -42,4 +43,8 @@ code {
 .bg-1, .bg-2,
 .bg-3, .bg-4 {
   color: #ccc;
+}
+
+.indented {
+  margin-left: 30px;
 }
