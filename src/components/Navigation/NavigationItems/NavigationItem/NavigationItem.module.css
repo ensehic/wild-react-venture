@@ -11,6 +11,8 @@
     width: 100%;
     box-sizing: border-box;
     display: block;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 @media (min-width: 500px) {
