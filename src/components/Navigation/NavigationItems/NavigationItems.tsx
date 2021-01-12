@@ -7,9 +7,9 @@ const NavigationItems = () => {
     return (
         <ul className={classes.navigationItems}>
             <NavigationItem text="Home" target="/" exact />
+            <NavigationItem text="The World of Outer Wilds" target="/the-world" />
+            <NavigationItem text="Astral bodies" target="/astral-bodies" />
             <NavigationItem text="Travelers" target="/travelers" />
-            <NavigationItem text="Screenshots" target="/screenshots" />
-            <NavigationItem text="Whaow" target="/whaow" />
         </ul>
     );
 };
