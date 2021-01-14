@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Container from '../components/Container/Container';
 import Spacer from '../components/Spacer/Spacer';
 import classes from './Travelers.module.css';
+import eskerImg from '../assets/images/esker.png';
+import placeholderImg from '../assets/images/placeholder.png';
+import Traveler from '../components/Traveler/Traveler';
+import { TravelerEnum } from '../types';
+
 
 const Travelers = () => {
+    const [currentTraveler, setCurrentTraveler] = useState<TravelerEnum | null>(null);
+
+    const handleTravelerSelection = (selectedTraveler: TravelerEnum): void => {
+
+        // Deselect traveler if the already selected traveler was selected again.
+        if (selectedTraveler === currentTraveler) {
+            setCurrentTraveler(null);
+            return;
+        }
+        setCurrentTraveler(selectedTraveler);
+    };
+
     return (
         <>
             <Container>
@@ -18,10 +35,36 @@ const Travelers = () => {
             <Spacer width="100%" height="5vh" />
             <Container>
                 <div className={classes.travelersGrid}>
-                    <div className={classes.gridCell}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tempore obcaecati, est autem, neque possimus fuga voluptates sunt quas quasi voluptas sint adipisci omnis. Quis veniam fugit quidem neque iusto.</div>
-                    <div className={classes.gridCell}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tempore obcaecati, est autem, neque possimus fuga voluptates sunt quas quasi voluptas sint adipisci omnis. Quis veniam fugit quidem neque iusto.</div>
-                    <div className={classes.gridCell}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tempore obcaecati, est autem, neque possimus fuga voluptates sunt quas quasi voluptas sint adipisci omnis. Quis veniam fugit quidem neque iusto.</div>
-                    <div className={classes.gridCell}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt tempore obcaecati, est autem, neque possimus fuga voluptates sunt quas quasi voluptas sint adipisci omnis. Quis veniam fugit quidem neque iusto.</div>
+                    <Traveler
+                        traveler={TravelerEnum.esker}
+                        imageSource={eskerImg}
+                        travelerSelected={handleTravelerSelection}
+                        currentTraveler={currentTraveler}
+                    />
+                    <Traveler
+                        traveler={TravelerEnum.gabbro}
+                        imageSource={placeholderImg}
+                        travelerSelected={handleTravelerSelection}
+                        currentTraveler={currentTraveler}
+                    />
+                    <Traveler
+                        traveler={TravelerEnum.riebeck}
+                        imageSource={placeholderImg}
+                        travelerSelected={handleTravelerSelection}
+                        currentTraveler={currentTraveler}
+                    />
+                    <Traveler
+                        traveler={TravelerEnum.chert}
+                        imageSource={placeholderImg}
+                        travelerSelected={handleTravelerSelection}
+                        currentTraveler={currentTraveler}
+                    />
+                    <Traveler
+                        traveler={TravelerEnum.feldspar}
+                        imageSource={placeholderImg}
+                        travelerSelected={handleTravelerSelection}
+                        currentTraveler={currentTraveler}
+                    />
                 </div>
             </Container>
         </>
