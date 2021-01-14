@@ -1,0 +1,22 @@
+.gridCell {
+    position: relative;
+}
+
+.travelerImage {
+    max-width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.travelerTitle {
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.travelerDescription {
+    padding: 25px 15px;
+}
