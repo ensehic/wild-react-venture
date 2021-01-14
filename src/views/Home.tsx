@@ -19,7 +19,6 @@ const Home = () => {
                 2. To acknowledge a game that really doesn&lsquo;t seem to get enough recognition online. What seems to contribute to this a lot is the fact that Outer Wilds was released
                 in the same year as another, more talked about game, Outer Worlds.
             </p>
-            <p>Release May 2019</p>
         </Container>
     );
 };
