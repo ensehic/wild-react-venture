@@ -1,22 +1,36 @@
-.gridCell {
-    position: relative;
+.traveler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .travelerImage {
     max-width: 100%;
-    display: block;
     cursor: pointer;
+    object-fit: cover;
 }
 
-.travelerTitle {
+.travelerName {
     position: absolute;
     text-transform: uppercase;
     font-weight: 700;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .travelerDescription {
     padding: 25px 15px;
+}
+
+@media (min-width: 1200px) {
+    .traveler {
+        height: 500px;
+        flex: 1;
+    }
+
+    .travelerImage {
+        /* TODO: See which looks better, none or cover. */
+        object-fit: none;
+        object-position: center top;
+        height: 100%;
+    }
 }

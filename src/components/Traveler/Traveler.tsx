@@ -2,8 +2,7 @@ import React from 'react';
 
 import classes from './Traveler.module.css';
 import { TravelerEnum } from '../../types';
-import travelerDescriptions from './travelerDescriptions.json';
-
+// import travelerDescriptions from './travelerDescriptions.json';
 
 interface TravelerProps {
     traveler: TravelerEnum,
@@ -14,20 +13,21 @@ interface TravelerProps {
 
 const Traveler = (props: TravelerProps) => {
     return (
-        <div className={classes.gridCell} onClick={() => props.travelerSelected(props.traveler)}>
+        <div className={classes.traveler} onClick={() => props.travelerSelected(props.traveler)}>
             {
                 props.currentTraveler === props.traveler ?
                     null:
-                    <h1 className={classes.travelerTitle}>{props.traveler}</h1>
+                    <h1 className={classes.travelerName}>{props.traveler}</h1>
             }
-            <img src={props.imageSource} className={classes.travelerImage} alt="Placeholder"/>
-            {
+            <img src={props.imageSource} className={classes.travelerImage} alt={props.traveler} />
+
+            {/* {
                 props.currentTraveler === props.traveler ?
                     <p className={classes.travelerDescription}>
                         {travelerDescriptions[props.traveler]}
                     </p> :
                     null
-            }
+            } */}
         </div>
     );
 };

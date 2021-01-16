@@ -34,7 +34,7 @@ const Travelers = () => {
             </Container>
             <Spacer width="100%" height="5vh" />
             <Container>
-                <div className={classes.travelersGrid}>
+                <div className={classes.travelers}>
                     <Traveler
                         traveler={TravelerEnum.esker}
                         imageSource={eskerImg}
