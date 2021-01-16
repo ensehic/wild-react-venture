@@ -3,6 +3,10 @@
     flex-flow: column;
 }
 
+.travelerDescription {
+    padding: 25px 15px;
+}
+
 @media (min-width: 1200px) {
     .travelers {
         flex-flow: row;
