@@ -7,7 +7,6 @@ import useWindowDimensions from '../../hooks/WindowDimensions';
 
 interface TravelerProps {
     traveler: TravelerEnum,
-    imageSource: string,
     travelerSelected: (traveler: TravelerEnum) => void,
     currentTraveler: TravelerEnum | null
 }
