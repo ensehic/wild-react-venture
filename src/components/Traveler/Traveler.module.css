@@ -5,10 +5,25 @@
     flex-direction: column;
 }
 
+.imageWrapper {
+    height: 100%;
+    background: #000;
+}
+
 .travelerImage {
     max-width: 100%;
     cursor: pointer;
     object-fit: cover;
+    opacity: 0.3;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    transition: filter 0.5s ease-in, -webkit-filter 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.travelerImage:hover {
+    opacity: 1;
+    filter: none;
+    -webkit-filter: none;
 }
 
 .travelerName {

@@ -18,12 +18,15 @@ const Traveler = (props: TravelerProps) => {
 
     return (
         <div className={classes.traveler} onClick={() => props.travelerSelected(props.traveler)}>
+            <div className={classes.imageWrapper}>
+                <img src={props.imageSource} className={classes.travelerImage} alt={props.traveler} />
+            </div>
+
             {
                 props.currentTraveler === props.traveler ?
                     null:
                     <h1 className={classes.travelerName}>{props.traveler}</h1>
             }
-            <img src={props.imageSource} className={classes.travelerImage} alt={props.traveler} />
 
             {/* If screen is less than 1200px wide, show the description of selected traveler below its picture */}
             {
