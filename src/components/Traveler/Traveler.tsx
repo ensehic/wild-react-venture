@@ -12,6 +12,7 @@ interface TravelerProps {
 }
 
 const Traveler = (props: TravelerProps) => {
+    const { traveler, travelerSelected, currentTraveler } = props;
     const [width] = useWindowDimensions();
     const isWideScreen = width >= 1200;
     const [imageSource, setImageSource] = useState(undefined);
@@ -28,30 +29,30 @@ const Traveler = (props: TravelerProps) => {
     };
 
     useEffect(() => {
-        getTravelerImage(props.traveler);
+        getTravelerImage(traveler);
     });
 
     return (
-        <div className={classes.traveler} onClick={() => props.travelerSelected(props.traveler)}>
+        <div className={classes.traveler} onClick={() => travelerSelected(traveler)}>
             <div className={classes.imageWrapper}>
                 {
                     imageSource &&
-                    <img src={imageSource} className={classes.travelerImage} alt={props.traveler} />
+                    <img src={imageSource} className={classes.travelerImage} alt={traveler} />
                 }
             </div>
 
             {
-                props.currentTraveler === props.traveler ?
+                currentTraveler === traveler ?
                     null:
-                    <h1 className={classes.travelerName}>{props.traveler}</h1>
+                    <h1 className={classes.travelerName}>{traveler}</h1>
             }
 
             {/* If screen is less than 1200px wide, show the description of selected traveler below its picture */}
             {
-                !isWideScreen && props.currentTraveler &&
-                props.currentTraveler === props.traveler &&
+                !isWideScreen && currentTraveler &&
+                currentTraveler === traveler &&
                     <p className={classes.travelerDescription}>
-                        {travelerDescriptions[props.traveler]}
+                        {travelerDescriptions[traveler]}
                     </p>
             }
         </div>
