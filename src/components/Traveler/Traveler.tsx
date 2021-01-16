@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import classes from './Traveler.module.css';
 import { TravelerEnum } from '../../types';
@@ -15,11 +15,30 @@ interface TravelerProps {
 const Traveler = (props: TravelerProps) => {
     const [width] = useWindowDimensions();
     const isWideScreen = width >= 1200;
+    const [imageSource, setImageSource] = useState(undefined);
+
+    /**
+     * Dynamically imports the image for the given traveler.
+     * Returns the path to the image on success, undefined on error.
+     * @param traveler Traveler name
+     */
+    const getTravelerImage = (traveler: TravelerEnum) => {
+        import(`../../assets/images/${traveler}.png`)
+            .then(res => setImageSource(res.default))
+            .catch(() => undefined);
+    };
+
+    useEffect(() => {
+        getTravelerImage(props.traveler);
+    });
 
     return (
         <div className={classes.traveler} onClick={() => props.travelerSelected(props.traveler)}>
             <div className={classes.imageWrapper}>
-                <img src={props.imageSource} className={classes.travelerImage} alt={props.traveler} />
+                {
+                    imageSource &&
+                    <img src={imageSource} className={classes.travelerImage} alt={props.traveler} />
+                }
             </div>
 
             {
