@@ -7,7 +7,7 @@
     "fpsLimit": 60,
     "particles": {
         "color": {
-            "value":"#fff"
+            "value": ["#fff", "#de9c0d", "#ded70d", "#01024e"]
         },
         "number": {
             "density": {
@@ -15,7 +15,7 @@
                 "area": 1080
             },
             "limit": 0,
-            "value": 100
+            "value": 120
         },
         "opacity": {
             "animation": {
