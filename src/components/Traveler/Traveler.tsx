@@ -30,11 +30,16 @@ const Traveler = (props: TravelerProps) => {
 
     useEffect(() => {
         getTravelerImage(traveler);
-    });
+    }, []);
+
+    /**
+     * Checks whether or not the given traveler is selected currently.
+     */
+    const isSelectedTraveler = (): boolean => traveler === currentTraveler;
 
     const imageClasses = [
         classes.travelerImage,
-        traveler === currentTraveler ? classes.selectedTraveler : null
+        isSelectedTraveler() && classes.selectedTraveler
     ];
 
     return (
@@ -46,15 +51,15 @@ const Traveler = (props: TravelerProps) => {
                 }
             </div>
 
+            {/* Display the traveler's name when they aren't selected */}
             {
-                currentTraveler !== traveler &&
+                !isSelectedTraveler() &&
                     <h1 className={classes.travelerName}>{traveler}</h1>
             }
 
             {/* If screen is less than 1200px wide, show the description of selected traveler below its picture */}
             {
-                !isWideScreen && currentTraveler &&
-                currentTraveler === traveler &&
+                !isWideScreen && isSelectedTraveler() &&
                     <p className={classes.travelerDescription}>
                         {travelerDescriptions[traveler]}
                     </p>
