@@ -44,18 +44,29 @@ const Traveler = (props: TravelerProps) => {
 
     return (
         <div className={classes.traveler}>
-            <div className={classes.imageWrapper}>
-                {
-                    imageSource &&
-                    <img src={imageSource} className={imageClasses.join(' ')} alt={traveler} onClick={() => travelerSelected(traveler)} />
-                }
-            </div>
 
             {/* Display the traveler's name when they aren't selected */}
             {
                 !isSelectedTraveler() &&
-                    <h1 className={classes.travelerName}>{traveler}</h1>
+                <h1
+                    className={classes.travelerName}
+                    onClick={() => travelerSelected(traveler)}
+                >
+                    {traveler}
+                </h1>
             }
+
+            <div className={classes.imageWrapper}>
+                {
+                    imageSource &&
+                    <img
+                        src={imageSource}
+                        className={imageClasses.join(' ')}
+                        alt={traveler}
+                        onClick={() => travelerSelected(traveler)}
+                    />
+                }
+            </div>
 
             {/* If screen is less than 1200px wide, show the description of selected traveler below its picture */}
             {

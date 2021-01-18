@@ -41,6 +41,14 @@
     position: absolute;
     text-transform: uppercase;
     font-weight: 700;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.travelerName:hover + .imageWrapper .travelerImage {
+    opacity: 1;
+    filter: none;
+    -webkit-filter: none;
 }
 
 
