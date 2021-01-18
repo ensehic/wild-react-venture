@@ -43,11 +43,11 @@ const Traveler = (props: TravelerProps) => {
     ];
 
     return (
-        <div className={classes.traveler} onClick={() => travelerSelected(traveler)}>
+        <div className={classes.traveler}>
             <div className={classes.imageWrapper}>
                 {
                     imageSource &&
-                    <img src={imageSource} className={imageClasses.join(' ')} alt={traveler} />
+                    <img src={imageSource} className={imageClasses.join(' ')} alt={traveler} onClick={() => travelerSelected(traveler)} />
                 }
             </div>
 
