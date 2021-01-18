@@ -11,8 +11,8 @@ interface TravelerProps {
     currentTraveler: TravelerEnum | null
 }
 
-const Traveler = (props: TravelerProps) => {
-    const { traveler, travelerSelected, currentTraveler } = props;
+const Traveler = ({ traveler, travelerSelected, currentTraveler }: TravelerProps) => {
+
     const [width] = useWindowDimensions();
     const isWideScreen = width >= 1200;
     const [imageSource, setImageSource] = useState(undefined);
