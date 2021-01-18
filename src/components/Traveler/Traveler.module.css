@@ -12,9 +12,9 @@
 }
 
 .travelerImage {
+    height: 100%;
     max-width: 100%;
     cursor: pointer;
-    object-fit: cover;
     opacity: 0.3;
     filter: blur(3px);
     -webkit-filter: blur(3px);
@@ -22,6 +22,12 @@
 }
 
 .travelerImage:hover {
+    opacity: 1;
+    filter: none;
+    -webkit-filter: none;
+}
+
+.selectedTraveler {
     opacity: 1;
     filter: none;
     -webkit-filter: none;
@@ -44,9 +50,7 @@
     }
 
     .travelerImage {
-        /* TODO: See which looks better, none or cover. */
         object-fit: none;
         object-position: center top;
-        height: 100%;
     }
 }

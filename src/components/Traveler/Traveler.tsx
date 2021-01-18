@@ -32,18 +32,22 @@ const Traveler = (props: TravelerProps) => {
         getTravelerImage(traveler);
     });
 
+    const imageClasses = [
+        classes.travelerImage,
+        traveler === currentTraveler ? classes.selectedTraveler : null
+    ];
+
     return (
         <div className={classes.traveler} onClick={() => travelerSelected(traveler)}>
             <div className={classes.imageWrapper}>
                 {
                     imageSource &&
-                    <img src={imageSource} className={classes.travelerImage} alt={traveler} />
+                    <img src={imageSource} className={imageClasses.join(' ')} alt={traveler} />
                 }
             </div>
 
             {
-                currentTraveler === traveler ?
-                    null:
+                currentTraveler !== traveler &&
                     <h1 className={classes.travelerName}>{traveler}</h1>
             }
 
