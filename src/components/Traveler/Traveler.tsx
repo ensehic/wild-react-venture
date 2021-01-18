@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import classes from './Traveler.module.css';
 import { TravelerEnum } from '../../types';
-import travelerDescriptions from './travelerDescriptions.json';
 import useWindowDimensions from '../../hooks/WindowDimensions';
+import TravelerDescription from '../TravelerDescription/TravelerDescription';
 
 interface TravelerProps {
     traveler: TravelerEnum,
@@ -60,9 +60,7 @@ const Traveler = (props: TravelerProps) => {
             {/* If screen is less than 1200px wide, show the description of selected traveler below its picture */}
             {
                 !isWideScreen && isSelectedTraveler() &&
-                    <p className={classes.travelerDescription}>
-                        {travelerDescriptions[traveler]}
-                    </p>
+                    <TravelerDescription traveler={traveler} />
             }
         </div>
     );

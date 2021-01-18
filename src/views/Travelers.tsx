@@ -6,8 +6,7 @@ import classes from './Travelers.module.css';
 import Traveler from '../components/Traveler/Traveler';
 import { TravelerEnum } from '../types';
 import useWindowDimensions from '../hooks/WindowDimensions';
-import travelerDescriptions from '../components/Traveler/travelerDescriptions.json';
-
+import TravelerDescription from '../components/TravelerDescription/TravelerDescription';
 
 const Travelers = () => {
     const [currentTraveler, setCurrentTraveler] = useState<TravelerEnum | null>(null);
@@ -64,12 +63,10 @@ const Travelers = () => {
                     />
                 </div>
 
-                {/* If screen is over 1200px wide, show the description of selected traveler below all the traveler images */}
+                {/* If screen is over 1200px wide, show the description of the selected traveler below all the traveler images */}
                 {
                     isWideScreen && currentTraveler &&
-                    <div className={classes.travelerDescription}>
-                        <p>{travelerDescriptions[currentTraveler]}</p>
-                    </div>
+                        <TravelerDescription traveler={currentTraveler} />
                 }
             </Container>
         </>

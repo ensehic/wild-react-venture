@@ -43,9 +43,6 @@
     font-weight: 700;
 }
 
-.travelerDescription {
-    padding: 25px 15px;
-}
 
 @media (min-width: 1200px) {
     .traveler {
