@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+.traveler:not(:first-of-type) {
+    margin-top: 40px;
+}
+
 .imageWrapper {
     height: 100%;
     background: #000;
@@ -47,6 +51,10 @@
     .traveler {
         height: 500px;
         flex: 1;
+    }
+
+    .traveler:not(:first-of-type) {
+        margin: 0;
     }
 
     .travelerImage {
