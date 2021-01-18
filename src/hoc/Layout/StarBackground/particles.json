@@ -7,7 +7,7 @@
     "fpsLimit": 60,
     "particles": {
         "color": {
-            "value": ["#fff", "#de9c0d", "#ded70d", "#01024e"]
+            "value": ["#fff", "#de9c0d", "#036bfc", "#036bfc"]
         },
         "number": {
             "density": {
@@ -15,18 +15,18 @@
                 "area": 1080
             },
             "limit": 0,
-            "value": 120
+            "value": 200
         },
         "opacity": {
             "animation": {
                 "enable": true,
-                "minimumValue": 0.05,
-                "speed": 0.25,
+                "minimumValue": 0.25,
+                "speed": 0.75,
                 "sync": false
             },
             "random": {
                 "enable": true,
-                "minimumValue": 0.05
+                "minimumValue": 0.5
             },
             "value": 1
         },
@@ -36,7 +36,7 @@
         "size": {
             "random": {
                 "enable": true,
-                "minimumValue": 0.5
+                "minimumValue": 0.3
             },
             "value": 2
         }
