@@ -11,9 +11,12 @@
     z-index: -1;
 }
 
-.bg-1 {
-    /* background-color: #01024e; */
+.bg-1a {
     background-color: rgba(1, 2, 78, 0.8);
+}
+
+.bg-1 {
+    background-color: #01024e;
 }
 
 .bg-2 {

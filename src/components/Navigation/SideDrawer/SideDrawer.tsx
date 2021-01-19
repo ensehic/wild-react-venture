@@ -12,7 +12,7 @@ const SideDrawer = ({closed}: SideDrawerProps) => {
     return (
         <>
             <Backdrop backdropClicked={closed} />
-            <div className={classes.SideDrawer}>
+            <div className={`${classes.SideDrawer} bg-1`}>
                 <nav onClick={closed}>
                     <NavigationItems />
                 </nav>
