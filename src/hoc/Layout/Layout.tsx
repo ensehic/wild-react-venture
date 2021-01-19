@@ -21,12 +21,15 @@ const Layout = (props: LayoutProps) => {
     const isMobileWidth = width <= 500;
 
     /**
-     * Toggles SideDrawer's visibility.
+     * Toggles SideDrawer's visibility. Called when user clicks DrawerToggle.
      */
     const sideDrawerToggleHandler = () => {
         setShowSideDrawer(!showSideDrawer);
     };
 
+    /**
+     * Hides SideDrawer. Called when user clicks on SideDrawer.
+     */
     const sideDrawerClosedHandler = () => {
         setShowSideDrawer(false);
     };
@@ -38,7 +41,7 @@ const Layout = (props: LayoutProps) => {
             {
                 showSideDrawer &&
                 isMobileWidth &&
-                <SideDrawer closed={sideDrawerClosedHandler}/>
+                <SideDrawer closed={sideDrawerClosedHandler} />
             }
             <main className={classes.content}>
                 {props.children}

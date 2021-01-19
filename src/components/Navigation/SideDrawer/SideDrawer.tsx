@@ -8,18 +8,15 @@ interface SideDrawerProps {
     closed: () => void
 }
 
-const SideDrawer = ({closed}: SideDrawerProps) => {
-    return (
-        <>
-            <Backdrop backdropClicked={closed} />
-            <div className={`${classes.SideDrawer} bg-1`}>
-                <nav onClick={closed}>
-                    <NavigationItems />
-                </nav>
-            </div>
-        </>
-
-    );
-};
+const SideDrawer = ({closed}: SideDrawerProps) => (
+    <>
+        <Backdrop backdropClicked={closed} />
+        <div className={`${classes.SideDrawer} bg-1`}>
+            <nav onClick={closed}>
+                <NavigationItems />
+            </nav>
+        </div>
+    </>
+);
 
 export default SideDrawer;
