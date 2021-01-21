@@ -29,13 +29,6 @@ const Layout = (props: LayoutProps) => {
         setShowSideDrawer(!showSideDrawer);
     };
 
-    /**
-     * Hides SideDrawer. Called when user clicks on SideDrawer.
-     */
-    const sideDrawerClosedHandler = () => {
-        setShowSideDrawer(false);
-    };
-
     const defaultStyle = {
         transition: `transform ${sideDrawerTransitionDuration}ms linear`,
         transform: 'translateX(-100%)',
@@ -62,7 +55,7 @@ const Layout = (props: LayoutProps) => {
             >
                 {state => (
                     <SideDrawer
-                        closed={sideDrawerClosedHandler}
+                        closed={sideDrawerToggleHandler}
                         style={{
                             ...defaultStyle,
                             ...transitionStyles[state]
