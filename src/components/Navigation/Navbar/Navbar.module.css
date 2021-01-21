@@ -14,15 +14,3 @@
 .navbar nav {
     height: 100%;
 }
-
-@media (max-width: 499px) {
-    .mobileOnly {
-        display: none;
-    }
-}
-
-@media (min-width: 500px) {
-    .mobileOnly {
-        margin: 0 auto;
-    }
-}
