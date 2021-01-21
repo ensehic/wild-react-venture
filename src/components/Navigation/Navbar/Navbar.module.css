@@ -1,16 +1,18 @@
 .navbar {
-    height: 56px;
+    height: 72px;
     width: 100%;
-    /* position: fixed;
-    top: 0;
-    left: 0; */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     padding: 0 20px;
-    z-index: 100;
 }
 
 .navbar nav {
     height: 100%;
+}
+
+@media (min-width: 500px) {
+    .navbar {
+        justify-content: center;
+    }
 }
