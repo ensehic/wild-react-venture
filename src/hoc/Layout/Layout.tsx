@@ -47,6 +47,7 @@ const Layout = (props: LayoutProps) => {
             <StarBackground />
             <Navbar drawerToggleClicked={sideDrawerToggleHandler} isMobileWidth={isMobileWidth} />
 
+            {/* Animate the mounting and unmounting of SideDrawer. */}
             <Transition
                 in={showSideDrawer && isMobileWidth}
                 timeout={sideDrawerTransitionDuration}

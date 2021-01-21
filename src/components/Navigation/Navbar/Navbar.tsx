@@ -12,7 +12,12 @@ interface NavbarProps {
 const Navbar = ({drawerToggleClicked, isMobileWidth}: NavbarProps) => (
     <header className={`${classes.navbar} bg-1`}>
         { isMobileWidth && <DrawerToggle drawerToggleClicked={drawerToggleClicked} /> }
-        { !isMobileWidth && <NavigationItems /> }
+        {
+            !isMobileWidth &&
+            <nav>
+                <NavigationItems />
+            </nav>
+        }
     </header>
 );
 
