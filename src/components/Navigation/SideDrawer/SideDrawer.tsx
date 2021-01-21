@@ -5,13 +5,17 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 
 interface SideDrawerProps {
-    closed: () => void
+    closed: () => void,
+    style: {
+        transition: string,
+        transform: string
+    }
 }
 
-const SideDrawer = ({closed}: SideDrawerProps) => (
+const SideDrawer = ({closed, style}: SideDrawerProps) => (
     <>
         <Backdrop backdropClicked={closed} />
-        <div className={`${classes.SideDrawer} bg-1`}>
+        <div className={`${classes.SideDrawer} bg-1`} style={style}>
             <nav onClick={closed}>
                 <NavigationItems />
             </nav>
