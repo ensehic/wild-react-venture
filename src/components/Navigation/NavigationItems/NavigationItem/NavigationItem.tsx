@@ -9,18 +9,16 @@ interface NavigationItemProps {
     exact?: true | undefined
 }
 
-const NavigationItem = (props: NavigationItemProps) => {
-    return (
-        <li className={classes.navigationItem}>
-            <NavLink
-                to={props.target}
-                exact={props.exact}
-                activeClassName={classes.active}
-            >
-                <p>{props.text}</p>
-            </NavLink>
-        </li>
-    );
-};
+const NavigationItem = (props: NavigationItemProps) => (
+    <li className={classes.navigationItem}>
+        <NavLink
+            to={props.target}
+            exact={props.exact}
+            activeClassName={classes.active}
+        >
+            <p>{props.text}</p>
+        </NavLink>
+    </li>
+);
 
 export default NavigationItem;

@@ -14,7 +14,7 @@ const BackToTop = () => {
             className={`${classes.backToTop} bg-1`}
             onClick={backToTopHandler}
         >
-                &uarr;
+            &uarr;
         </div>
     );
 };

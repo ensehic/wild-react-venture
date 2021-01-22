@@ -6,13 +6,11 @@ interface ContainerProps {
     children: React.ReactNode
 }
 
-const Container = (props: ContainerProps) => {
-    return (
-        <div className={`${classes.container} bg-1a`}>
-            {props.children}
-        </div>
-    );
-};
+const Container = (props: ContainerProps) => (
+    <div className={`${classes.container} bg-1a`}>
+        {props.children}
+    </div>
+);
 
 export default Container;
 

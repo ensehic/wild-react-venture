@@ -8,12 +8,10 @@ interface TravelerDescriptionProps {
     traveler: TravelerEnum
 }
 
-const TravelerDescription = ({traveler}: TravelerDescriptionProps) => {
-    return (
-        <div className={classes.travelerDescription}>
-            <p>{travelerDescriptions[traveler]}</p>
-        </div>
-    );
-};
+const TravelerDescription = ({traveler}: TravelerDescriptionProps) => (
+    <div className={classes.travelerDescription}>
+        <p>{travelerDescriptions[traveler]}</p>
+    </div>
+);
 
 export default TravelerDescription;

@@ -5,12 +5,10 @@ interface SpacerProps {
     height?: string
 }
 
-const Spacer = (props: SpacerProps) => {
-    return (
-        <div style={{width: `${props.width}`, height: `${props.height}`}}>
-            &nbsp;
-        </div>
-    );
-};
+const Spacer = (props: SpacerProps) => (
+    <div style={{width: `${props.width}`, height: `${props.height}`}}>
+        &nbsp;
+    </div>
+);
 
 export default Spacer;
