@@ -6,6 +6,8 @@ import Navbar from '../../components/Navigation/Navbar/Navbar';
 import classes from './Layout.module.css';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import useWindowDimensions from '../../hooks/WindowDimensions';
+import BackToTop from '../../components/BackToTop/BackToTop';
+import useScrollPosition from '../../hooks/ScrollPosition';
 
 interface LayoutProps {
     children: ReactNode
@@ -15,6 +17,7 @@ const Layout = (props: LayoutProps) => {
     const [showSideDrawer, setShowSideDrawer] = useState(false);
     const [width] = useWindowDimensions();
     const sideDrawerTransitionDuration = 300;
+    const scrollPosition = useScrollPosition();
 
     /**
      * Used to determine whether to show DrawerToggle or NavigationItems in Navbar.
@@ -28,6 +31,12 @@ const Layout = (props: LayoutProps) => {
     const sideDrawerToggleHandler = () => {
         setShowSideDrawer(!showSideDrawer);
     };
+
+    /**
+     * Displays the back to top button if screen width is equal to or less than 1200px
+     * and user has scrolled down 350px or more.
+     */
+    const shouldDisplayBackToTopButton = () => width <= 1200 && scrollPosition >= 350;
 
     const defaultStyle = {
         transition: `transform ${sideDrawerTransitionDuration}ms linear`,
@@ -65,9 +74,15 @@ const Layout = (props: LayoutProps) => {
                 )}
             </Transition>
 
+            {/* Main content - most importantly views. */}
             <main className={classes.content}>
                 {props.children}
             </main>
+
+            {
+                shouldDisplayBackToTopButton() && <BackToTop />
+            }
+
         </>
     );
 };
