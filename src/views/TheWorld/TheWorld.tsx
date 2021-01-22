@@ -2,10 +2,7 @@ import React from 'react';
 
 import Container from '../../components/Container/Container';
 import classes from './TheWorld.module.css';
-
-import campfireImg from '../../assets/images/campfire.png';
-import observatoryImg from '../../assets/images/observatory.png';
-import spaceshipImg from '../../assets/images/spaceship.png';
+import Image from '../../components/Image/Image';
 
 const TheWorld = () => (
     <>
@@ -36,12 +33,12 @@ const TheWorld = () => (
                     the launch codes from Hornfels in your village&apos;s observatory.
                 </p>
                 <div className={classes.imageWrapper}>
-                    <img src={campfireImg} className={classes.icon} />
+                    <Image filename='campfire.png' classes={classes.icon} />
                 </div>
             </div>
             <div className={classes.contentDiv}>
                 <div className={classes.imageWrapper}>
-                    <img src={observatoryImg} className={classes.icon} />
+                    <Image filename='observatory.png' classes={classes.icon} />
                 </div>
                 <p className={classes.text}>
                     As you make your way through the village, you meet other Hearthians
@@ -61,7 +58,7 @@ const TheWorld = () => (
                     What happens next is completely up to you.
                 </p>
                 <div className={classes.imageWrapper}>
-                    <img src={spaceshipImg} className={classes.icon} />
+                    <Image filename='spaceship.png' classes={classes.icon} />
                 </div>
             </div>
         </Container>
