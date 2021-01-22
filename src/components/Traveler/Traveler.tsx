@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import classes from './Traveler.module.css';
 import { TravelerEnum } from '../../types';
 import useWindowDimensions from '../../hooks/WindowDimensions';
 import TravelerDescription from '../TravelerDescription/TravelerDescription';
+import Image from '../Image/Image';
 
 interface TravelerProps {
     traveler: TravelerEnum,
@@ -15,22 +16,6 @@ const Traveler = ({ traveler, travelerSelected, currentTraveler }: TravelerProps
 
     const [width] = useWindowDimensions();
     const isWideScreen = width >= 1200;
-    const [imageSource, setImageSource] = useState(undefined);
-
-    /**
-     * Dynamically imports the image for the given traveler.
-     * Returns the path to the image on success, undefined on error.
-     * @param traveler Traveler name
-     */
-    const getTravelerImage = (traveler: TravelerEnum) => {
-        import(`../../assets/images/${traveler}.png`)
-            .then(res => setImageSource(res.default))
-            .catch(() => undefined);
-    };
-
-    useEffect(() => {
-        getTravelerImage(traveler);
-    }, []);
 
     /**
      * Checks whether or not the given traveler is selected currently.
@@ -58,12 +43,10 @@ const Traveler = ({ traveler, travelerSelected, currentTraveler }: TravelerProps
 
             <div className={classes.imageWrapper}>
                 {
-                    imageSource &&
-                    <img
-                        src={imageSource}
-                        className={imageClasses.join(' ')}
-                        alt={traveler}
-                        onClick={() => travelerSelected(traveler)}
+                    <Image
+                        filename={`${traveler}.png`}
+                        classes={imageClasses.join(' ')}
+                        imageClicked={() => travelerSelected(traveler)}
                     />
                 }
             </div>
