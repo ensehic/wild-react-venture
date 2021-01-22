@@ -1,0 +1,42 @@
+.contentDiv {
+    display: flex;
+    flex-flow: column;
+}
+
+.imageWrapper {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.icon {
+    max-height: 20vh;
+}
+
+.contentDiv:nth-of-type(even) {
+    flex-flow: column-reverse;
+}
+
+@media (min-width: 1200px) {
+    .contentDiv,
+    .contentDiv:nth-of-type(even) {
+        flex-flow: row;
+        justify-content: space-between;
+        padding: 30px 0;
+    }
+
+    .text {
+        width: 70%;
+    }
+
+    .imageWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        padding: 0;
+    }
+
+    .icon {
+        object-fit: contain;
+    }
+}
