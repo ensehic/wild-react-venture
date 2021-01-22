@@ -28,9 +28,7 @@ const Layout = (props: LayoutProps) => {
     /**
      * Toggles SideDrawer's visibility. Called when user clicks DrawerToggle.
      */
-    const sideDrawerToggleHandler = () => {
-        setShowSideDrawer(!showSideDrawer);
-    };
+    const sideDrawerToggleHandler = () => setShowSideDrawer(!showSideDrawer);
 
     /**
      * Displays the back to top button if screen width is equal to or less than 1200px
