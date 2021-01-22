@@ -36,31 +36,17 @@ const Travelers = () => {
             <Spacer width="100%" height="5vh" />
             <Container>
                 <div className={classes.travelers}>
-                    <Traveler
-                        traveler={TravelerEnum.esker}
-                        travelerSelected={handleTravelerSelection}
-                        currentTraveler={currentTraveler}
-                    />
-                    <Traveler
-                        traveler={TravelerEnum.gabbro}
-                        travelerSelected={handleTravelerSelection}
-                        currentTraveler={currentTraveler}
-                    />
-                    <Traveler
-                        traveler={TravelerEnum.riebeck}
-                        travelerSelected={handleTravelerSelection}
-                        currentTraveler={currentTraveler}
-                    />
-                    <Traveler
-                        traveler={TravelerEnum.chert}
-                        travelerSelected={handleTravelerSelection}
-                        currentTraveler={currentTraveler}
-                    />
-                    <Traveler
-                        traveler={TravelerEnum.feldspar}
-                        travelerSelected={handleTravelerSelection}
-                        currentTraveler={currentTraveler}
-                    />
+                    {
+                        Object.values(TravelerEnum)
+                            .map(traveler => (
+                                <Traveler
+                                    key={traveler}
+                                    traveler={traveler}
+                                    travelerSelected={handleTravelerSelection}
+                                    currentTraveler={currentTraveler}
+                                />
+                            ))
+                    }
                 </div>
 
                 {/* If screen is over 1200px wide, show the description of the selected traveler below all the traveler images */}
