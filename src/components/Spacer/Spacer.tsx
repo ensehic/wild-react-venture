@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface SpacerProps {
-    width: string
-    height: string
+    width?: string
+    height?: string
 }
 
 const Spacer = (props: SpacerProps) => {

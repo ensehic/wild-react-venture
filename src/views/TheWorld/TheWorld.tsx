@@ -3,6 +3,7 @@ import React from 'react';
 import Container from '../../components/Container/Container';
 import classes from './TheWorld.module.css';
 import Image from '../../components/Image/Image';
+import Spacer from '../../components/Spacer/Spacer';
 
 const TheWorld = () => (
     <>
@@ -22,7 +23,7 @@ const TheWorld = () => (
                 their goals. You will of course also find out exactly what happened to them.
             </p>
         </Container>
-        <br/><br/>
+        <Spacer height="5vh" />
         <Container>
             <div className={classes.contentDiv}>
                 <p className={classes.text}>
