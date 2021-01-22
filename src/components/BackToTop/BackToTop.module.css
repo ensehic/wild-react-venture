@@ -1,0 +1,12 @@
+
+.backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    color: #ccc;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+}
