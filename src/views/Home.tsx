@@ -11,7 +11,7 @@ const Home = () => (
         <p>This is a little personal project made for two reasons:</p>
         <p className={'indented'}>
             1. To finally develop something of my own instead of watching endless guides in React development.
-            I&apos;ve been feeling anxious about not having anything to show for the time spent learning this JavaScript library - except of course the cookie-cutter to-do lists and such.
+            I&apos;ve been wanting to have something to show for the time spent learning this JavaScript library - aside from the cookie-cutter to-do lists and such.
             Those are all well and good for learning a new technology, of course, but if I am to create something for my &lsquo;portfolio&lsquo;, I want it to be something more personal.
         </p>
         <p className={'indented'}>
