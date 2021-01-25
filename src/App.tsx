@@ -5,7 +5,7 @@ import './App.css';
 import Layout from './hoc/Layout/Layout';
 import Home from './views/Home';
 import TheWorld from './views/TheWorld/TheWorld';
-import Travelers from './views/Travelers';
+import Travelers from './views/Travelers/Travelers';
 
 const App = () => {
     const routes = [

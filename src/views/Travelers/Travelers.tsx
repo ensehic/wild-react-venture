@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import Container from '../components/Container/Container';
-import Spacer from '../components/Spacer/Spacer';
+import Container from '../../components/Container/Container';
+import Spacer from '../../components/Spacer/Spacer';
 import classes from './Travelers.module.css';
-import Traveler from '../components/Traveler/Traveler';
-import { TravelerEnum } from '../types';
-import useWindowDimensions from '../hooks/WindowDimensions';
-import TravelerDescription from '../components/TravelerDescription/TravelerDescription';
+import Traveler from '../../components/Traveler/Traveler';
+import { TravelerEnum } from '../../types';
+import useWindowDimensions from '../../hooks/WindowDimensions';
+import TravelerDescription from '../../components/TravelerDescription/TravelerDescription';
 
 const Travelers = () => {
     const [currentTraveler, setCurrentTraveler] = useState<TravelerEnum | null>(null);
