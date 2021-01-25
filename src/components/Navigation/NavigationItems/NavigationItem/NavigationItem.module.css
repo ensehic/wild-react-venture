@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.navigationItem a p {
+    text-align: center;
+}
+
 .navigationItem a:hover,
 .navigationItem a:active,
 .navigationItem a.active {
