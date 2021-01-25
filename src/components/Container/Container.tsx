@@ -3,11 +3,12 @@ import React from 'react';
 import classes from './Container.module.css';
 
 interface ContainerProps {
-    children: React.ReactNode
+    children: React.ReactNode,
+    style?: { padding: string }
 }
 
 const Container = (props: ContainerProps) => (
-    <div className={`${classes.container} bg-1a`}>
+    <div style={props.style} className={`${classes.container} bg-1a`}>
         {props.children}
     </div>
 );
