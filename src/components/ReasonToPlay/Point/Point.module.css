@@ -1,0 +1,14 @@
+.reasonContent {
+    padding: 10px 15px;
+}
+
+.point {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrowSpan {
+    font-size: 0.6em;
+    padding-left: 10px;
+}
