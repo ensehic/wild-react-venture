@@ -6,6 +6,7 @@
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    font-weight: 600;
 }
 
 .reasonToPlay:not(:last-of-type) {

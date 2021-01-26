@@ -21,12 +21,11 @@ const Point = ({pointClicked, reason, showExplanation}: PointProps) => {
             className={[parentClasses.reasonContent, parentClasses.point].join(' ')}
             onClick={pointClicked}
         >
-            <span>{`${reason.reasonNum}. ${reason.point}`}</span>
-
+            <span>
+                {`${reason.reasonNum}. ${reason.point}`}
+            </span>
             <span className={classes.arrowSpan}>
-                {
-                    reason.explanation && displayArrow()
-                }
+                { reason.explanation && displayArrow() }
             </span>
         </p>
     );
