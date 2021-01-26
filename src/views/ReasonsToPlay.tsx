@@ -40,7 +40,11 @@ const ReasonsToPlay = () => {
                 {
                     reasons.map((reason, index) => (
                         <React.Fragment key={reason.point}>
-                            <ReasonToPlay reason={reason} index={index+1} />
+                            <ReasonToPlay
+                                reasonNum={index+1}
+                                point={reason.point}
+                                explanation={reason.explanation}
+                            />
                         </React.Fragment>
                     ))
                 }
