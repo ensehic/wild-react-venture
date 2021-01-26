@@ -1,0 +1,31 @@
+.reasonContent {
+    padding: 10px 15px;
+}
+
+.explanation {
+    display: none;
+}
+
+.explanation.show {
+    display: block;
+    padding-bottom: 25px;
+}
+
+.point {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reasonToPlay:not(:last-of-type) {
+    border-bottom: 1px solid #543864;
+}
+
+.reasonToPlay:last-of-type .point {
+    cursor: default;
+}
+
+.arrowSpan {
+    font-size: 0.6em;
+    padding-left: 10px;
+}
