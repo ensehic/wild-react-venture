@@ -1,6 +1,7 @@
 import React from 'react';
 
 import classes from './Point.module.css';
+import parentClasses from '../ReasonToPlay.module.css';
 import { IReasonToPlay } from '../../../types';
 
 interface PointProps {
@@ -17,7 +18,7 @@ const Point = ({pointClicked, reason, showExplanation}: PointProps) => {
 
     return (
         <p
-            className={[classes.reasonContent, classes.point].join(' ')}
+            className={[parentClasses.reasonContent, parentClasses.point].join(' ')}
             onClick={pointClicked}
         >
             <span>{`${reason.reasonNum}. ${reason.point}`}</span>
