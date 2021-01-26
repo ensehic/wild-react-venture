@@ -5,3 +5,9 @@ export enum TravelerEnum {
     chert = 'chert',
     feldspar = 'feldspar',
 }
+
+export interface IReasonToPlay {
+    reasonNum: number,
+    point: string,
+    explanation?: string
+}
