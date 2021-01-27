@@ -3,10 +3,9 @@ import React from 'react';
 import Container from '../components/Container/Container';
 import ReasonToPlay from '../components/ReasonToPlay/ReasonToPlay';
 import Spacer from '../components/Spacer/Spacer';
-import reasonsToPlay from '../components/ReasonToPlay/reasonsToPlay.json';
+import reasonsToPlay from '../components/ReasonToPlay/reasons';
 
 const ReasonsToPlay = () => {
-    const reasons = reasonsToPlay['reasons'];
 
     return (
         <>
@@ -26,7 +25,7 @@ const ReasonsToPlay = () => {
 
             <Container>
                 {
-                    reasons.map((reason, index) => (
+                    reasonsToPlay.map((reason, index) => (
                         <React.Fragment key={reason.point}>
                             <ReasonToPlay
                                 reasonNum={index+1}
