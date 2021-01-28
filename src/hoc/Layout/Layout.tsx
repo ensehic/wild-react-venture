@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react';
-import { Transition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 import StarBackground from './StarBackground/StarBackground';
 import Navbar from '../../components/Navigation/Navbar/Navbar';
@@ -36,41 +36,23 @@ const Layout = (props: LayoutProps) => {
      */
     const shouldDisplayBackToTopButton = () => width <= 1200 && scrollPosition >= 350;
 
-    const defaultStyle = {
-        transition: `transform ${sideDrawerTransitionDuration}ms linear`,
-        transform: 'translateX(-100%)',
-    };
-
-    const transitionStyles = {
-        entering: { transform: 'translateX(-100%)' },
-        entered:  { transform: 'translateX(0)' },
-        exiting:  { transform: 'translateX(-100%)' },
-        exited:  { transform: 'translateX(-100%)' },
-        unmounted: { transform: 'translateX(-100%)' }
-    };
-
     return (
         <>
             <StarBackground />
             <Navbar drawerToggleClicked={sideDrawerToggleHandler} isMobileWidth={isMobileWidth} />
 
-            {/* Animate the mounting and unmounting of SideDrawer. */}
-            <Transition
+            {/* Animate the mounting and unmounting of SideDrawer. Animation is defined in App.css */}
+            <CSSTransition
                 in={showSideDrawer && isMobileWidth}
                 timeout={sideDrawerTransitionDuration}
                 mountOnEnter
                 unmountOnExit
+                classNames={'sideDrawerTransition'}
             >
-                {state => (
-                    <SideDrawer
-                        closed={sideDrawerToggleHandler}
-                        style={{
-                            ...defaultStyle,
-                            ...transitionStyles[state]
-                        }}
-                    />
-                )}
-            </Transition>
+                <SideDrawer
+                    closed={sideDrawerToggleHandler}
+                />
+            </CSSTransition>
 
             {/* Main content - most importantly views. */}
             <main className={classes.content}>

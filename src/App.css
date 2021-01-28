@@ -39,3 +39,23 @@
 .indented {
     margin-left: 30px;
 }
+
+/* Sidedrawer animation */
+@keyframes openSideDrawer {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes closeSideDrawer {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.sideDrawerTransition-enter-active {
+    animation: openSideDrawer 0.3s linear forwards;
+}
+
+.sideDrawerTransition-exit-active {
+    animation: closeSideDrawer 0.3s linear forwards;
+}
+/* Sidedrawer animation end*/

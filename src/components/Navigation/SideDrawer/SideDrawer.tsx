@@ -6,20 +6,16 @@ import classes from './SideDrawer.module.css';
 
 interface SideDrawerProps {
     closed: () => void,
-    style: {
-        transition: string,
-        transform: string
-    }
 }
 
-const SideDrawer = ({closed, style}: SideDrawerProps) => (
+const SideDrawer = ({closed}: SideDrawerProps) => (
     <>
-        <Backdrop backdropClicked={closed} />
-        <div className={`${classes.SideDrawer} bg-1`} style={style}>
+        <div className={`${classes.SideDrawer} bg-1`}>
             <nav onClick={closed}>
                 <NavigationItems />
             </nav>
         </div>
+        <Backdrop backdropClicked={closed} />
     </>
 );
 
