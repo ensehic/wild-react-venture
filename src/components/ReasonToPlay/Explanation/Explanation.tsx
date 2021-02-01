@@ -1,26 +1,39 @@
-import React from 'react';
+import React, {useRef, useLayoutEffect, useState} from 'react';
 
 import classes from './Explanation.module.css';
-import parentClasses from '../ReasonToPlay.module.css';
-import { IReasonToPlay } from '../../../types';
 
-type ExplanationProps = Omit<IReasonToPlay, 'reasonNum'>;
+interface ExplanationProps {
+    explanation: string,
+    isExpanded: boolean
+}
 
-const Explanation = ({point, explanation}: ExplanationProps) => {
+const Explanation = ({explanation, isExpanded}: ExplanationProps) => {
+    const elementRef = useRef<HTMLParagraphElement>(null);
+
+    // Use state to control the p element's height.
+    const [explanationHeight, setExplanationHeight] = useState(0);
+
+    /**
+     * Instead of giving the p element bottom padding through css, do it here,
+     * because the same value will be used to pad its height.
+     */
+    const paddingBottom = 25;
+
+    useLayoutEffect(() => {
+        if (elementRef.current) {
+            isExpanded ?
+                setExplanationHeight(elementRef.current.scrollHeight + paddingBottom) :
+                setExplanationHeight(0);
+        }
+    }, [isExpanded]);
+
     return (
         <p
-            className={[
-                parentClasses.reasonContent,
-                classes.explanation,
-            ].join(' ')}
+            ref={elementRef}
+            className={classes.explanation}
+            style={{height: `${explanationHeight}px`}}
         >
             {explanation}
-            {
-                point === 'The music' &&
-                <p style={{textAlign: 'center'}}>
-                    <iframe width="400" height="225" src="https://www.youtube.com/embed/SPa8bPqQfmo" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                </p>
-            }
         </p>
     );
 };

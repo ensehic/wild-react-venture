@@ -19,8 +19,8 @@ const ReasonToPlay = ({reasonNum, point, explanation}: IReasonToPlay) => {
             />
 
             {
-                (showExplanation && explanation) &&
-                    <Explanation point={point} explanation={explanation} />
+                explanation &&
+                    <Explanation explanation={explanation} isExpanded={showExplanation} />
             }
         </div>
     );
