@@ -59,3 +59,29 @@
     animation: closeSideDrawer 0.3s linear forwards;
 }
 /* Sidedrawer animation end*/
+
+
+/* View transition start */
+.view {
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes viewEnter {
+    from { opacity: 0; transform: translateX(-50%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes viewExit {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(50%); }
+}
+
+.view-enter-active {
+    animation: viewEnter 0.6s ease-out forwards;
+}
+
+.view-exit-active {
+    animation: viewExit 0.6s ease-out forwards;
+}
+/* View transition end */
