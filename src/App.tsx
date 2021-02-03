@@ -4,19 +4,9 @@ import { CSSTransition } from 'react-transition-group';
 
 import './App.css';
 import Layout from './hoc/Layout/Layout';
-import Home from './views/Home';
-import ReasonsToPlay from './views/ReasonsToPlay';
-import TheWorld from './views/TheWorld/TheWorld';
-import Travelers from './views/Travelers/Travelers';
+import routes from './shared/appRoutes';
 
 const App = () => {
-    const routes = [
-        {path: '/', name: 'Home', View: Home},
-        {path: '/reasons-to-play', name: 'ReasonsToPlay', View: ReasonsToPlay},
-        {path: '/the-world', name: 'TheWorld', View: TheWorld},
-        {path: '/travelers', name: 'Travelers', View: Travelers}
-    ];
-
     return (
         <Layout>
             {
