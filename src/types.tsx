@@ -11,3 +11,9 @@ export interface IReasonToPlay {
     point: string,
     explanation?: string
 }
+
+export interface IAppRoute {
+    path: string,
+    name: string,
+    View: () => JSX.Element
+}
