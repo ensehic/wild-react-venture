@@ -62,26 +62,48 @@
 
 
 /* View transition start */
-.view {
+.lower-index-view, .higher-index-view {
     position: absolute;
     width: 100%;
 }
 
-@keyframes viewEnter {
+/* Lower index view enters from the left */
+@keyframes lowerIndexViewEnter {
     from { opacity: 0; transform: translateX(-50%); }
     to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes viewExit {
+/* Higher index view exits to the right */
+@keyframes lowerIndexViewExit {
     from { opacity: 1; transform: translateX(0); }
     to { opacity: 0; transform: translateX(50%); }
 }
 
-.view-enter-active {
-    animation: viewEnter 0.6s ease-out forwards;
+/* Higher index view enters from the right */
+@keyframes higherIndexViewEnter {
+    from { opacity: 0; transform: translateX(50%); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-.view-exit-active {
-    animation: viewExit 0.6s ease-out forwards;
+/* Lower index view exits to the left */
+@keyframes higherIndexViewExit {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(-50%); }
+}
+
+.lower-index-view-enter-active {
+    animation: lowerIndexViewEnter 0.6s ease-out forwards;
+}
+
+.lower-index-view-exit-active {
+    animation: lowerIndexViewExit 0.6s ease-out forwards;
+}
+
+.higher-index-view-enter-active {
+    animation: higherIndexViewEnter 0.6s ease-out forwards;
+}
+
+.higher-index-view-exit-active {
+    animation: higherIndexViewExit 0.6s ease-out forwards;
 }
 /* View transition end */

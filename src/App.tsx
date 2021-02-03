@@ -1,13 +1,37 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, withRouter, RouteComponentProps } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
 import './App.css';
 import Layout from './hoc/Layout/Layout';
 import routes from './shared/appRoutes';
 
-const App = () => {
+const App = ({location}: RouteComponentProps) => {
     const [viewClassName, setViewClassName] = useState<string|undefined>(undefined);
+    const {pathname} = location;
+    const [previousPath, setPreviousPath] = useState('');
+
+    /**
+     * Fetches the index of the given path in `routes`.
+     * @param path string
+     */
+    const getIndexOfRoutePath = (path: string) =>
+        routes.map((route) => route.path)
+            .indexOf(path);
+
+    useEffect(() => {
+        if (previousPath !== '') {
+
+            const indexOfCurrentPath = getIndexOfRoutePath(pathname);
+            const indexOfPreviousPath = getIndexOfRoutePath(previousPath);
+
+            setViewClassName(
+                indexOfCurrentPath < indexOfPreviousPath ? 'lower-index-view' : 'higher-index-view'
+            );
+        }
+
+        setPreviousPath(pathname);
+    }, [pathname]);
 
     return (
         <Layout>
@@ -24,12 +48,10 @@ const App = () => {
                                 in={match !== null}
                                 timeout={600}
                                 /**
-                                 * .view positions the div absolutely, which would mess with the site layout if it were kept like that
-                                 *  at all times. Using CSSTransition's callbacks, set .view only when needed.
+                                 * .lower-index-view and .higher-index-view position the div absolutely, which would mess with the site's layout if it were
+                                 * kept like that at all times. Using CSSTransition's onExited callback, remove the classname, so the div is positioned normally.
                                  */
-                                onEnter={() => setViewClassName('view')}
-                                onEntered={() => setViewClassName(undefined)}
-                                onExit={() => setViewClassName('view')}
+                                onExited={() => setViewClassName(undefined)}
                                 classNames={viewClassName}
                                 unmountOnExit
                             >
@@ -45,4 +67,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default withRouter(App);
