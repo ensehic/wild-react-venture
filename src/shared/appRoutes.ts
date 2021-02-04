@@ -6,9 +6,9 @@ import { IAppRoute } from '../types';
 
 const routes: IAppRoute[] = [
     {path: '/', name: 'Home', View: Home},
-    {path: '/reasons-to-play', name: '10 Reasons to Play', View: ReasonsToPlay},
     {path: '/the-world', name: 'The World of Outer Wilds', View: TheWorld},
-    {path: '/travelers', name: 'Travelers', View: Travelers}
+    {path: '/travelers', name: 'Travelers', View: Travelers},
+    {path: '/reasons-to-play', name: '10 Reasons to Play', View: ReasonsToPlay}
 ];
 
 export default routes;
