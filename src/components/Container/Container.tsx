@@ -4,7 +4,7 @@ import classes from './Container.module.css';
 
 interface ContainerProps {
     children: React.ReactNode,
-    style?: { padding: string }
+    style?: React.CSSProperties
 }
 
 const Container = (props: ContainerProps) => (
