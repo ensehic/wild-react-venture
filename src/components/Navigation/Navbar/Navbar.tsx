@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './Navbar.module.css';
@@ -9,7 +9,7 @@ interface NavbarProps {
     isMobileWidth: boolean
 }
 
-const Navbar = ({drawerToggleClicked, isMobileWidth}: NavbarProps) => (
+const Navbar = ({drawerToggleClicked, isMobileWidth}: NavbarProps) => useMemo(() => (
     <header className={`${classes.navbar} bg-1`}>
         { isMobileWidth && <DrawerToggle drawerToggleClicked={drawerToggleClicked} /> }
         {
@@ -19,6 +19,6 @@ const Navbar = ({drawerToggleClicked, isMobileWidth}: NavbarProps) => (
             </nav>
         }
     </header>
-);
+), [isMobileWidth]);
 
 export default Navbar;
