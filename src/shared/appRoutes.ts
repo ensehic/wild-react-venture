@@ -1,4 +1,4 @@
-import Home from '../views/Home';
+import Home from '../views/Home/Home';
 import ReasonsToPlay from '../views/ReasonsToPlay';
 import TheWorld from '../views/TheWorld/TheWorld';
 import Travelers from '../views/Travelers/Travelers';

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Container from '../components/Container/Container';
-import Spacer from '../components/Spacer/Spacer';
+import Container from '../../components/Container/Container';
+import Spacer from '../../components/Spacer/Spacer';
 import classes from './Home.module.css';
 
 const Home = () => (
