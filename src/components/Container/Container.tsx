@@ -4,12 +4,21 @@ import classes from './Container.module.css';
 
 interface ContainerProps {
     children: React.ReactNode,
-    style?: React.CSSProperties
+    style?: React.CSSProperties,
+    classNameProp?: string,
+    defaultBackground?: true
 }
 
-const Container = (props: ContainerProps) => (
-    <div style={props.style} className={`${classes.container} bg-1a`}>
-        {props.children}
+const Container = ({children, style, classNameProp, defaultBackground}: ContainerProps) => (
+    <div
+        style={style}
+        className={[
+            classes.container,
+            defaultBackground && 'bg-1a',
+            classNameProp && classNameProp
+        ].join(' ')}
+    >
+        {children}
     </div>
 );
 
