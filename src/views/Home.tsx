@@ -5,11 +5,11 @@ import Spacer from '../components/Spacer/Spacer';
 
 const Home = () => (
     <>
-        <Container>
+        <Container defaultBackground>
             <p>Be welcomed in this place!</p>
         </Container>
         <Spacer height='5vh' />
-        <Container>
+        <Container defaultBackground>
             <h3>...What <em>is</em> this place?</h3>
             <br />
             <p>This is a little personal project made for two reasons:</p>

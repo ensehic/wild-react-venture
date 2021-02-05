@@ -7,7 +7,7 @@ import Spacer from '../../components/Spacer/Spacer';
 
 const TheWorld = () => (
     <>
-        <Container>
+        <Container defaultBackground>
             <p>
                 The world of Outer Wilds isn&apos;t very big, but it is incredibly dense. It consists of five planets and a handful of minor astral bodies like moons and a comet.
                 Present too are several structures from the times of the Nomai that attest to the technologic and scientific advancement of the now gone race. All this doesn&apos;t
@@ -24,7 +24,7 @@ const TheWorld = () => (
             </p>
         </Container>
         <Spacer height="5vh" />
-        <Container>
+        <Container defaultBackground>
             <div className={classes.contentDiv}>
                 <p className={classes.text}>
                     You wake up in a clearing. The vastness of space is staring right down at you. You see an explosion out in space. What happened?

@@ -25,7 +25,7 @@ const Travelers = () => {
 
     return (
         <>
-            <Container>
+            <Container defaultBackground>
                 <p>
                     As you traverse the star system, you&apos;ll likely run into other other members of Outer Wilds Ventures. These encounters are moments
                     of calm amidst all the chaos of your exploration of the system, so do take the opportunity to relax a bit. Sit by the campires, roast some marshmallows
@@ -34,7 +34,7 @@ const Travelers = () => {
                 </p>
             </Container>
             <Spacer width="100%" height="5vh" />
-            <Container>
+            <Container defaultBackground>
                 <div className={classes.travelers}>
                     {
                         Object.values(TravelerEnum)

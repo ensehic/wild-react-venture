@@ -9,7 +9,7 @@ const ReasonsToPlay = () => {
 
     return (
         <>
-            <Container>
+            <Container defaultBackground>
                 Here&apos;s a small list of things that in my opinion speak in favor of picking up Outer Wilds. This is all very subjective,
                 so obviously it&apos;s unlikely anybody will find every single one of these points agreeable. If you aren&apos;t convinced
                 after looking through the list, then maybe Outer Wilds just isn&apos;t a game you will enjoy. On the other hand I personally
@@ -23,7 +23,7 @@ const ReasonsToPlay = () => {
 
             <Spacer height='5vh' />
 
-            <Container>
+            <Container defaultBackground>
                 {
                     reasonsToPlay.map((reason, index) => (
                         <React.Fragment key={reason.point}>
