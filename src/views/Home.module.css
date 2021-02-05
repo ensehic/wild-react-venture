@@ -1,0 +1,40 @@
+.homeMainContent {
+   display: flex;
+   flex-flow: column;
+   padding: 0;
+}
+
+.homeSubContent {
+    width: 100%;
+}
+
+.beforeYouMove {
+    margin-top: 5vh;
+}
+
+
+@media (min-width: 1200px) {
+    .homeMainContent {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        row-gap: 3vh;
+        column-gap: 3vh;
+    }
+
+    .intro {
+        grid-row: 1 / span 2;
+    }
+
+    .whatIs {
+        grid-area: 1 / 2; /* grid-row-start / grid-column-start shorthand*/
+    }
+
+    .beforeYouMove {
+        grid-area: 2 / 2;
+    }
+
+    .beforeYouMove {
+        margin-top: 0;
+    }
+}
