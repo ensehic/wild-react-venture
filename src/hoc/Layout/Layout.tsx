@@ -23,7 +23,7 @@ const Layout = (props: LayoutProps) => {
      * Used to determine whether to show DrawerToggle or NavigationItems in Navbar.
      * Also used to automatically close SideDrawer when window is resized to over 500px width.
      */
-    const isMobileWidth = width <= 500;
+    const isMobileWidth = width < 500;
 
     /**
      * Toggles SideDrawer's visibility. Called when user clicks DrawerToggle.
