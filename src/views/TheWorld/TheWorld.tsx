@@ -18,7 +18,7 @@ const TheWorld = () => (
             <br/>
             <p>
                 The Nomai are front and center in the game. While they are long gone, their presence can be felt in every corner of the world. They inhabited most of the planets, so
-                you will run into Nomai architecture. Their settlements in particular show just how willing and able the Nomai were to adapt, as each planet offered their own challenges
+                you will run into Nomai constructions. Their settlements in particular show just how willing and able the Nomai were to adapt, as each planet offered its own challenges
                 in terms of habitability. As you traverse the world you will learn how the Nomai thought, what they wished to achieve and to what lengths they were willing to go, to reach
                 their goals. You will of course also find out exactly what happened to them.
             </p>
